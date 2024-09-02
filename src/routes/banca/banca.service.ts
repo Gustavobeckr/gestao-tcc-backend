@@ -1,26 +1,28 @@
 import { Injectable } from '@nestjs/common';
 import { CreateBancaDto } from './dto/create-banca.dto';
 import { UpdateBancaDto } from './dto/update-banca.dto';
+import { BancaRepository } from 'src/Repository/banca/banca.repository';
 
 @Injectable()
 export class BancaService {
-  create(createBancaDto: CreateBancaDto) {
-    return 'This action adds a new banca';
+  constructor(private readonly bancaRepository: BancaRepository) {}
+  async create(createBancaDto: CreateBancaDto) {
+    return await this.bancaRepository.create(createBancaDto);
   }
 
-  findAll() {
-    return `This action returns all banca`;
+  async findAll() {
+    return await this.bancaRepository.findAll();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} banca`;
+  async findOne(matriculaAluno: number) {
+    return await this.bancaRepository.findOneByMatricula(matriculaAluno);
   }
 
-  update(id: number, updateBancaDto: UpdateBancaDto) {
-    return `This action updates a #${id} banca`;
+  async update(matriculaAluno: number, updateBancaDto: UpdateBancaDto) {
+    return await this.bancaRepository.updateOne(matriculaAluno, updateBancaDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} banca`;
+  async remove(matriculaAluno: number) {
+    return await this.bancaRepository.deleteOne(matriculaAluno);
   }
 }

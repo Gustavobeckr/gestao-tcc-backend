@@ -1,0 +1,32 @@
+## Cria Banca
+POST http://localhost:3000/banca
+Content-Type: application/json
+
+{
+  "matriculaAluno": "133822", 
+  "professores": [{"nome": "TesteProfessor", "titulo": "TesteTitulo"}],
+  "trabalhoConclusao":"Teste" 
+}
+
+### Lista Todas Bancas
+
+GET http://localhost:3000/banca
+
+
+### Lista um Banca pela matrícula do aluno
+
+GET http://localhost:3000/banca/133822
+
+### Atualiza Banca
+
+PATCH  http://localhost:3000/banca/133822
+
+{
+  "matriculaAluno": "133822", 
+  "professores": [{"nome": "TesteProfessor", "titulo": "TesteTitulo"}],
+  "trabalhoConclusao":"Teste" 
+}
+
+### Remove Banca
+
+DELETE   http://localhost:3000/banca/133822

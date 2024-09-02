@@ -3,6 +3,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { Aluno, AlunoSchema } from './Repository/Schemas/Aluno.schema';
 import { AlunoService } from './routes/aluno/aluno.service';
 import { AlunoController } from './routes/aluno/aluno.controller';
+import { AlunoRepository } from './Repository/aluno.repository';
 
 @Module({
   imports: [
@@ -10,6 +11,6 @@ import { AlunoController } from './routes/aluno/aluno.controller';
     MongooseModule.forFeature([{ name: 'Aluno', schema: AlunoSchema }]),
   ],
   controllers: [AlunoController],
-  providers: [AlunoService],
+  providers: [AlunoService, AlunoRepository],
 })
 export class AppModule {}

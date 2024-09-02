@@ -27,7 +27,7 @@ export class AlunoController {
 
   @Get(':id')
   findOne(@Param('id') matricula: string) {
-    return this.alunoService.findByMatricula(+matricula);
+    return this.alunoService.findOne(+matricula);
   }
 
   @Patch(':id')

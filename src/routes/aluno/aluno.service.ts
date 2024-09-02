@@ -4,29 +4,30 @@ import { UpdateAlunoDto } from './dto/update-aluno.dto';
 import { Aluno } from 'src/Repository/Schemas/Aluno.schema';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
+import { AlunoInterface } from 'src/Repository/Interfaces/Aluno.repository.interface';
+import { AlunoRepository } from 'src/Repository/aluno.repository';
 
 @Injectable()
 export class AlunoService {
-  constructor(@InjectModel('Aluno') private AlunoModel: Model<Aluno>) {}
+  constructor(private readonly alunoRepository: AlunoRepository) {}
 
-  async create(createAlunoDto: CreateAlunoDto): Promise<CreateAlunoDto> {
-    const createAluno = new this.AlunoModel(createAlunoDto);
-    return await createAluno.save();
+  async create(createAlunoDto: CreateAlunoDto): Promise<Aluno> {
+    return await this.alunoRepository.create(createAlunoDto);
   }
 
   async findAll() {
-    return await this.AlunoModel.find().exec();
+    return await this.alunoRepository.findAll();
   }
 
-  async findByMatricula(matricula: number) {
-    return await this.AlunoModel.findOne({ matricula });
+  async findOne(matricula: number) {
+    return await this.alunoRepository.findOneByMatricula(matricula);
   }
 
   async update(matricula: number, updateAlunoDto: UpdateAlunoDto) {
-    return await this.AlunoModel.updateOne({ matricula }, updateAlunoDto);
+    return await this.alunoRepository.updateOne(matricula, updateAlunoDto);
   }
 
   async remove(matricula: number) {
-    return await this.AlunoModel.deleteOne({ matricula });
+    return await this.alunoRepository.deleteOne(matricula);
   }
 }

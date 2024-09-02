@@ -2,9 +2,9 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Injectable } from '@nestjs/common';
 import { UpdateAlunoDto } from 'src/routes/aluno/dto/update-aluno.dto';
-import { Aluno } from './Schemas/Aluno.schema';
+import { Aluno } from './/Aluno.schema';
 import { CreateAlunoDto } from 'src/routes/aluno/dto/create-aluno.dto';
-import { AlunoInterface } from './Interfaces/Aluno.repository.interface';
+import { AlunoInterface } from './Aluno.repository.interface';
 
 @Injectable()
 export class AlunoRepository implements AlunoInterface {

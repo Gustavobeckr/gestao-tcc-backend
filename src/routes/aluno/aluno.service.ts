@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { CreateAlunoDto } from './dto/create-aluno.dto';
 import { UpdateAlunoDto } from './dto/update-aluno.dto';
-import { Aluno } from 'src/Repository/aluno/Aluno.schema';
+import { Aluno } from 'src/Repository/aluno/aluno.schema';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
-import { AlunoInterface } from 'src/Repository/aluno/Aluno.repository.interface';
+import { AlunoInterface } from 'src/Repository/aluno/aluno.repository.interface';
 import { AlunoRepository } from 'src/Repository/aluno/aluno.repository';
 
 @Injectable()

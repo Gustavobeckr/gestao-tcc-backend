@@ -1,6 +1,6 @@
 import { Document } from 'mongoose';
 import { CreateAlunoDto } from 'src/routes/aluno/dto/create-aluno.dto';
-import { Aluno } from './Aluno.schema';
+import { Aluno } from './aluno.schema';
 import { UpdateAlunoDto } from 'src/routes/aluno/dto/update-aluno.dto';
 
 export interface AlunoInterface {

@@ -3,7 +3,7 @@ import { AlunoRepository } from 'src/Repository/aluno/aluno.repository';
 import { AlunoService } from './aluno.service';
 import { AlunoController } from './aluno.controller';
 import { MongooseModule } from '@nestjs/mongoose';
-import { AlunoSchema } from 'src/Repository/aluno/Aluno.schema';
+import { AlunoSchema } from 'src/Repository/aluno/aluno.schema';
 
 @Module({
   imports: [

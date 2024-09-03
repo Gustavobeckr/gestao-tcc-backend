@@ -20,6 +20,7 @@ GET http://localhost:3000/banca/133822
 ### Atualiza Banca
 
 PATCH  http://localhost:3000/banca/133822
+Content-Type: application/json
 
 {
   "matriculaAluno": "133822", 

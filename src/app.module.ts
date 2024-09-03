@@ -1,17 +1,19 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Aluno, AlunoSchema } from './Repository/aluno/aluno.schema';
-import { AlunoService } from './routes/aluno/aluno.service';
-import { AlunoController } from './routes/aluno/aluno.controller';
-import { AlunoRepository } from './Repository/aluno/aluno.repository';
 import { BancaModule } from './routes/banca/banca.module';
-import { AlunoModule } from './routes/aluno/aluno.module';
+import { UsuarioModule } from './routes/usuario/usuario.module';
+import { CronogramaModule } from './routes/cronograma/cronograma.module';
+import { NotaModule } from './routes/nota/nota.module';
+import { ReuniaoModule } from './routes/reuniao/reuniao.module';
 
 @Module({
   imports: [
     MongooseModule.forRoot('mongodb://localhost:27017/gestaoTCC'),
-    AlunoModule,
     BancaModule,
+    UsuarioModule,
+    CronogramaModule,
+    NotaModule,
+    ReuniaoModule,
   ],
   controllers: [],
   providers: [],

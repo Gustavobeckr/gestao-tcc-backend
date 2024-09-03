@@ -1,0 +1,45 @@
+## Cria Cronograma
+POST http://localhost:3000/cronograma
+Content-Type: application/json
+
+{
+    "idCronogrma": 1,
+    "descricao": "Teste",
+    "etapa": "Proposta",
+    "avaliacoes": [ 
+        {"primeiraEntrega": "xx/xx/xxxx", "nota": 10},
+        {"segundaEntrega": "xx/xx/xxxx", "nota": 10}
+                ],
+    "dataEntrega": "Mon Sep 02 2024 20:43:47 GMT-0300",
+    "dataAvaliacao": "Mon Sep 02 2024 20:43:47 GMT-0300"
+}
+
+### Lista Todos Cronogramas
+
+GET http://localhost:3000/cronograma
+
+
+### Lista um Cronograma pela matrícula do aluno
+
+GET http://localhost:3000/cronograma/1
+
+### Atualiza Cronograma
+
+PATCH  http://localhost:3000/cronograma/1
+Content-Type: application/json
+
+{
+    "idCronogrma": 1,
+    "descricao": "Teste",
+    "etapa": "Proposta",
+    "avaliacoes": [ 
+        {"primeiraEntrega": "xx/xx/xxxx", "nota": 10},
+        {"segundaEntrega": "xx/xx/xxxx", "nota": 10}
+                ],
+    "dataEntrega": "Mon Sep 02 2024 20:43:47 GMT-0300",
+    "dataAvaliacao": "Mon Sep 02 2024 20:43:47 GMT-0300"
+}
+
+### Remove Cronograma
+
+DELETE   http://localhost:3000/cronograma/1

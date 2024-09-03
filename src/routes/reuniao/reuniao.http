@@ -1,0 +1,37 @@
+## Cria Reuniao
+POST http://localhost:3000/reuniao
+Content-Type: application/json
+
+{
+    "idReuniao": 1,
+    "matriculaAluno": 133822,
+    "ataReuniao": "Descricao Reuniao",
+    "dataReuniao": "Mon Sep 02 2024 20:43:47 GMT-0300",
+    "Documento": "URLDOCUMENTO"
+}
+
+### Lista Todas Reuniaos
+
+GET http://localhost:3000/reuniao
+
+
+### Lista um Reuniao pela matrícula do aluno
+
+GET http://localhost:3000/reuniao/1
+
+### Atualiza Reuniao
+
+PATCH  http://localhost:3000/reuniao/1
+Content-Type: application/json
+
+{
+    "idReuniao": 1,
+    "matriculaAluno": 133822,
+    "ataReuniao": "Descricao Reuniao",
+    "dataReuniao": "Mon Sep 02 2024 20:43:47 GMT-0300",
+    "Documento": "URLDOCUMENTO"
+}
+
+### Remove Reuniao
+
+DELETE   http://localhost:3000/reuniao/1

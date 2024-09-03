@@ -1,0 +1,37 @@
+## Cria Nota
+POST http://localhost:3000/nota
+Content-Type: application/json
+
+{
+    "idNota": 1,
+    "matriculaAluno":133822,
+    "professorAvaliador":{"nome": "nomeProfessor", "matriculaProfessor": 123123},
+    "etapa":"Proposta",
+    "notaCriterios": [{"1": 10,"2": 8, "3": 9, "4": 7,"5":10}]
+}
+
+### Lista Todas Notas
+
+GET http://localhost:3000/nota
+
+
+### Lista um Nota pela matrícula do aluno
+
+GET http://localhost:3000/nota/1
+
+### Atualiza Nota
+
+PATCH  http://localhost:3000/nota/1
+Content-Type: application/json
+
+{
+     "idNota": 1,
+    "matriculaAluno":133822,
+    "professorAvaliador":{"nome": "nomeProfessor", "matriculaProfessor": 123123},
+    "etapa":"Proposta",
+    "notaCriterios": [{"1": 10,"2": 8, "3": 9, "4": 7,"5":10}]
+}
+
+### Remove Nota
+
+DELETE   http://localhost:3000/nota/1

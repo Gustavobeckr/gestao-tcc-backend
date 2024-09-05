@@ -5,7 +5,7 @@ Content-Type: application/json
 {
   "matricula": "133822", 
   "nome":"Gustavo",
-  "senha": "senha123",
+  "senha": "addsda",
   "tipoUsuario":"Aluno" 
 }
 
@@ -25,10 +25,20 @@ Content-Type: application/json
 
 {
   "matricula": "133822", 
-  "nome":"Gustavo att",
-  "senha": "senha123 att",
+  "nome":"Gustavo",
+  "senha": "senha123",
   "tipoUsuario":"Professor" 
 }
 ### Remove Usuário
 
 DELETE   http://localhost:3000/usuario/133822
+
+### Login Usuário
+
+POST    http://localhost:3001/usuario/login
+Content-Type: application/json
+
+{
+  "matricula": "133822", 
+  "senha": "senha123"
+}
